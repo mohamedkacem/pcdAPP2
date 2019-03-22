@@ -1,0 +1,77 @@
+
+
+$blue: #0a94ab;
+$sidebarHeaderBg: url("https://image.freepik.com/vecteurs-libre/design-fond-moderne-3d-bleu_53876-88247.jpg");
+$deepBlue: #1b3a4e;
+$blue: #0a94ab;
+$lightBlue: #79cbd6;
+$orange: #f55e22;
+$darkOrange: #d9571e;
+$lightShadow: #6f6f6f;
+$shadow: #3f3f3f;
+$darkShadow: #0f0f0f;
+$sidenavColor: #898585;
+$iconCount: 8;
+
+/*$sidebarHeaderBg: url("./app/src/assets/header.jpg");*/
+.sidenav-container {
+  height: 100%;
+  
+}
+
+
+
+.sidenav {
+  width: 200px;
+  margin-top: 110px;
+  color: $orange;
+ 
+
+}
+
+/*.sidenav .mat-toolbar {
+  background: inherit;
+}*/
+/*
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+*/
+/*
+.navbar {
+  padding: 20px 0;
+ // margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  background-color: #2196F3;
+}*/
+.sidebar-header {
+ 
+  background-color: $blue;
+  background-image: $sidebarHeaderBg;
+  background-size: cover
+}
+/*
+.content {
+  background: inherit;
+}
+*/
+::selection {
+  background: transparent;
+}
+/*.background {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: $pageBg;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.2;
+}*/
+      
+ 

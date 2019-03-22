@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>{{data}}</h1>
+<div mat-dialog-content>
+  <form class="example-form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <mat-label>Mot_fr</mat-label>
+      <input matInput placeholder="Mot_fr" type="text" required [(ngModel)]="blogmot.mot_fr" name="mot_fr">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Mot_tn" type="text" required [(ngModel)]="blogmot.mot_tn" name="mot_tn">
+    </mat-form-field>
+   
+    <button mat-raised-button type="submit" color="primary">Enregister</button>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button class="close" (click)="onNoClick()" color="warn">Annuler</button>
+</div>
