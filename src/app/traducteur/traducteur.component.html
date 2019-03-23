@@ -1,23 +1,49 @@
 <!--<app-nav></app-nav>-->
-<mat-toolbar>
-    <span>Traducteur</span>
-  </mat-toolbar>
+
+<mat-toolbar><span >Traducteur</span></mat-toolbar>
+
+<br><br>
   <mat-card class="my-card">
      <mat-card-content>
-        <form class="my-form">
-           <mat-form-field class="full-width">
-              <mat-label>Email</mat-label>
-              <input  matInput  placeholder="Email" name="email" [(ngModel)]="email">
-           </mat-form-field><br>
-           <mat-form-field class="full-width">
-              <mat-label>Password</mat-label>
-              <input  matInput  placeholder="Password" name="password" [(ngModel)]="password">
-           </mat-form-field>
-          <!--<img src="./assets/img/aa.jpg"/>--> 
-        </form>
-     </mat-card-content>
+      <form>
+       
+         <div class="form-row">
+          
+           <div class="col">
+          
+             <input mdbInput type="text" class="form-control" placeholder="Francais">
+           </div>
+          
+           <div class="col">
+            
+             <input mdbInput type="text" class="form-control" placeholder="Tunisien">
+           </div>
+           
+         </div>
+         
+       </form>
+      </mat-card-content>
      <mat-card-actions>
-        <button mat-raised-button  (click)='auth()' color="primary">LOGIN</button>
+        <button mat-raised-button  color="primary">Traduire</button>
      </mat-card-actions>
   </mat-card>
-<!--<div class="chatpos"><app-chat></app-chat></div> -->
+  <br>
+  <mat-card>
+  <mat-tab-group mat-align-tabs="start">
+   <mat-tab label="First">Content 1</mat-tab>
+   <mat-tab label="Second">Content 2</mat-tab>
+   <mat-tab label="Third">Content 3</mat-tab>
+ </mat-tab-group>
+ 
+ <mat-tab-group mat-align-tabs="center">
+   <mat-tab label="First">Content 1</mat-tab>
+   <mat-tab label="Second">Content 2</mat-tab>
+   <mat-tab label="Third">Content 3</mat-tab>
+ </mat-tab-group>
+ 
+ <mat-tab-group mat-align-tabs="end">
+   <mat-tab label="First">Content 1</mat-tab>
+   <mat-tab label="Second">Content 2</mat-tab>
+   <mat-tab label="Third">Content 3</mat-tab>
+ </mat-tab-group>
+</mat-card>

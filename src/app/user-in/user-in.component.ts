@@ -21,10 +21,6 @@ export class UserInComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
-  tiles: Tile[] = [
-    {text: 'One', cols: 3, color: 'lightblue'},
-    {text: 'Two', cols: 1, color: 'lightgreen'},
-   
-  ];
+ 
 
 }

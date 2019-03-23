@@ -7,6 +7,7 @@ import { UserInComponent } from './user-in/user-in.component';
 import { TraducteurComponent } from './traducteur/traducteur.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 const routes: Routes = [
@@ -22,8 +23,8 @@ const routes: Routes = [
    path: 'home' ,
    component: UserInComponent , 
    children: [ 
-                  {path: 'traducteur' ,
-                                        component: TraducteurComponent}
+    {path: 'traducteur' ,component: TraducteurComponent},
+    {path: 'chat' ,component: ChatComponent}
    ]
    
  }

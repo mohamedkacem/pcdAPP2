@@ -1,317 +1,211 @@
-$blue: #2196F3;
-$dingy: #495B6A;
-$white: #ffffff;
-$purple: #673AB7;
-$yellow: #FFEB3B;
-$red: #F44336;
-$orange: #FF5722;
-$black: #333333;
-
-$nav: 100;
-
-$navHeight: 64px;
-
-$trans: 0.3s ease;
-
-* {
-  box-sizing: border-box;
+body,html{
+  height: 100%;
+  
+  
 }
 
-body {
-  /* position: relative; */
-  background-color: $orange;
+.chat{
+  margin-top: 40px;
+  margin-bottom: auto;
+  margin-left:500px;
+}
+.card{
+  height: 500px;
+  border-radius: 15px !important;
+  background-color: rgba(0,0,0,0.4) !important;
 }
 
-.title {
-  color: $white;
-  text-align: center;
-  font-weight: 100;
+.msg_card_body{
+  overflow-y: auto;
+}
+.card-header{
+  border-radius: 15px 15px 0 0 !important;
+  border-bottom: 0 !important;
+}
+.card-footer{
+border-radius: 0 0 15px 15px !important;
+  border-top: 0 !important;
+}
+.container{
+  align-content: center;
 }
 
-.wrapper {
-  height: 520px;
-  width: 300px;
-  overflow: hidden;
-  background-color: white;
-  
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  
-  box-shadow:         0px 3px 3px 0px rgba(50, 50, 50, 0.5);
-  
-  .inner {
-    overflow: scroll;
-    height: 520px;
-    padding-top: $navHeight;
-    background: darken($white, 5%);
-    
-    -ms-overflow-style: none;
-    overflow: -moz-scrollbars-none;
-    //gotta hide windows scrollbars
-    
-    &::-webkit-scrollbar {
-      width: 0 !important
-    }
-    
-    .content {
-      padding: ($navHeight - ($navHeight/1.5)) / 2;
-      position: relative;
-      margin-bottom: $navHeight/2;
-    }
-  }
-  
-  transition: $trans;
+
+.type_msg{
+  background-color: rgba(0,0,0,0.3) !important;
+  border:0 !important;
+  color:white !important;
+  height: 60px !important;
+  overflow-y: auto;
 }
-
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: $navHeight;
-  z-index: $nav;
-
-  .default-nav {
-    height: $navHeight;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: $nav + 10;
-
-    background-color: $red;
-    border-bottom: 3px solid darken($red, 10%);;
-    color: $white;
-
-    -webkit-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.1);
-    -moz-box-shadow:    0px 3px 3px 0px rgba(50, 50, 50, 0.1);
-    box-shadow:         0px 3px 3px 0px rgba(50, 50, 50, 0.1);
-
-    .main-nav {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: $navHeight;
-      top: 0;
-
-      margin: 0;
-      padding: 0;
-
-      list-style: none;
-      
-      .toggle {
-        height: 32px;
-        width: 32px;
-        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/104946/ic_arrow_back_white_48dp.png);
-        background-size: contain;
-        margin: 16px;
-        float: left;
-        
-        &:hover {
-          cursor: pointer;
-        }
-      }
-      
-      .options {
-        height: 32px;
-        width: 32px;
-        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/104946/ic_more_vert_white_48dp.png);
-        background-size: contain;
-        margin: 16px;
-        position: absolute;
-        right: 0;
-        
-        &:hover {
-          cursor: pointer;
-        }
-      }
-
-      .main-nav-item {
-        float: left;
-        height: $navHeight;
-        margin-right: 50px;
-        position: relative;
-
-        // text-align: center;
-        line-height: $navHeight;
-
-        .main-nav-item-link {
-          display: block;
-          position: relative;
-          height: $navHeight;
-          width: 100%;
-
-          text-align: center;
-          line-height: $navHeight;
-          text-decoration: none;
-          color: inherit;
-
-          transition: $trans;
-        }
-
-        transition: $trans;
-      }
-      
-      transition: $trans;
-    }
-
-    transition: $trans;
-  }
-  
-  transition: $trans;
+  .type_msg:focus{
+     box-shadow:none !important;
+       outline:0px !important;
 }
-
-.bottom {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  height: $navHeight;
-  background: $white;
-  
-  /* box-shadow: 0px -3px 3px 0px rgba(50, 50, 50, 0.1); */
-  
-  .input {
-    height: $navHeight;
-    background: $white;
-    border: none;
-    width: calc(100% - #{$navHeight});
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 0 5%;
-    resize: none;
-    overflow: scroll;
-    padding-top: ($navHeight/2) - 8;
-    font-weight: 300;
-    
-    &:focus {
-      outline: none;
-    }
-  
-    -ms-overflow-style: none;
-    overflow: -moz-scrollbars-none;
-    //gotta hide windows scrollbars
-    
-    &::-webkit-scrollbar {
-      width: 0 !important
-    }
-  }
-
-  .send {
-    position: fixed;
-    height: $navHeight/1.5;
-    width: $navHeight/1.5;
-    border-radius: 50%;
-    border: 0;
-    background: $red;
-    color: $white;
-    
-    bottom: ($navHeight - ($navHeight/1.5)) / 2;
-    right: ($navHeight - ($navHeight/1.5)) / 2;
-    
-    &:before {
-      content: '';
-      background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/104946/ic_send_white_48dp.png) no-repeat center center;
-    background-size: $navHeight/2.5;
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-    }
-    
-    &:focus {
-      outline: none;
-    }
-    
-    &:hover {
-      cursor: pointer;
-    }
-  }
+.attach_btn{
+border-radius: 15px 0 0 15px !important;
+background-color: rgba(0,0,0,0.3) !important;
+  border:0 !important;
+  color: white !important;
+  cursor: pointer;
 }
+.send_btn{
+border-radius: 0 15px 15px 0 !important;
+background-color: rgba(0,0,0,0.3) !important;
+  border:0 !important;
+  color: white !important;
+  cursor: pointer;
+}
+.search_btn{
+  border-radius: 0 15px 15px 0 !important;
+  background-color: rgba(0,0,0,0.3) !important;
+  border:0 !important;
+  color: white !important;
+  cursor: pointer;
+}
+.contacts{
+  list-style: none;
+  padding: 0;
+}
+.contacts li{
+  width: 100% !important;
+  padding: 5px 10px;
+  margin-bottom: 15px !important;
+}
+.active{
+  background-color: rgba(0,0,0,0.3);
+}
+.user_img{
+  height: 70px;
+  width: 70px;
+  border:1.5px solid #f5f6fa;
 
-.message-wrapper {
+}
+.user_img_msg{
+  height: 40px;
+  width: 40px;
+  border:1.5px solid #f5f6fa;
+
+}
+.img_cont{
   position: relative;
-  overflow: hidden;
-  
-  width: 100%;
-  margin: (($navHeight - ($navHeight/1.5)) / 2) 0;
-  padding: (($navHeight - ($navHeight/1.5)) / 2) 0;
-  
-  .circle-wrapper {
-    height: $navHeight/1.5;
-    width: $navHeight/1.5;
-    border-radius: 50%;
-  }
-  
-  .text-wrapper {
-    padding: ($navHeight - ($navHeight/1.5)) / 2;
-    min-height: $navHeight/1.5;
-    width: 60%;
-    margin: 0 ($navHeight - ($navHeight/1.5)) / 2;
-    box-shadow: 0px 1px 0px 0px rgba(50, 50, 50, 0.3);
-    border-radius: 2px;
-    font-weight: 300;
-    position: relative;
-    /* word-break: break-all; */
-    opacity: 0;
-    
-    &:before {
-      content: '';
-      width: 0;
-      height: 0;
-      border-style: solid;
-    }
-  }
-  
-  &.them {
-    .circle-wrapper, .text-wrapper {
-      background: $red;
-      float: left;
-      color: $white;
-    }
-    
-    .text-wrapper {
-      &:before {
-        border-width: 0 10px 10px 0;
-        border-color: transparent $red transparent transparent;
-        position: absolute;
-        top: 0;
-        left: -9px;
-      }
-    }
-  }
-  
-  &.me {
-    .circle-wrapper, .text-wrapper {
-      background: $orange;
-      float: right;
-      color: $black;
-    }
-    
-    .text-wrapper {
-      background: $white;
-      
-      &:before {
-        border-width: 10px 10px 0 0;
-        border-color: $white transparent transparent transparent;
-        position: absolute;
-        top: 0;
-        right: -9px;
-      }
-    }
-  }
+  height: 70px;
+  width: 70px;
 }
+.img_cont_msg{
+  height: 40px;
+  width: 40px;
+}
+.online_icon{
+position: absolute;
+height: 15px;
+width:15px;
+background-color: #4cd137;
+border-radius: 50%;
+bottom: 0.2em;
+right: 0.4em;
+border:1.5px solid white;
+}
+.offline{
+background-color: #c23616 !important;
+}
+.user_info{
+margin-top: auto;
+margin-bottom: auto;
+margin-left: 15px;
+}
+.user_info span{
+font-size: 20px;
+color: white;
+}
+.user_info p{
+font-size: 10px;
+color: rgba(255,255,255,0.6);
+}
+.video_cam{
+margin-left: 50px;
+margin-top: 5px;
+}
+.video_cam span{
+color: white;
+font-size: 20px;
+cursor: pointer;
+margin-right: 20px;
+}
+.msg_cotainer{
+margin-top: auto;
+margin-bottom: auto;
+margin-left: 10px;
+border-radius: 25px;
+background-color: #82ccdd;
+padding: 10px;
+position: relative;
+}
+.msg_cotainer_send{
+margin-top: auto;
+margin-bottom: auto;
+margin-right: 10px;
+border-radius: 25px;
+background-color: #78e08f;
+padding: 10px;
+position: relative;
+}
+.msg_time{
+position: absolute;
+left: 0;
+bottom: -15px;
+color: rgba(255,255,255,0.5);
+font-size: 10px;
+}
+.msg_time_send{
+position: absolute;
+right:0;
+bottom: -15px;
+color: rgba(255,255,255,0.5);
+font-size: 10px;
+}
+.msg_head{
+position: relative;
+}
+#action_menu_btn{
+position: absolute;
+right: 10px;
+top: 10px;
+color: white;
+cursor: pointer;
+font-size: 20px;
+}
+.action_menu{
+z-index: 1;
+position: absolute;
+padding: 15px 0;
+background-color: rgba(0,0,0,0.5);
+color: white;
+border-radius: 15px;
+top: 30px;
+right: 15px;
+display: none;
+}
+.action_menu ul{
+list-style: none;
+padding: 0;
+margin: 0;
+}
+.action_menu ul li{
+width: 100%;
+padding: 10px 15px;
+margin-bottom: 5px;
+}
+.action_menu ul li i{
+padding-right: 10px;
 
-@media (max-width: 560px) {
-  .wrapper {
-    width: 100%;
-    height: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    transform: translateX(0);
-    
-    .inner {
-      height: 100%;
-      height: 100vh;
-    }
-  }
+}
+.action_menu ul li:hover{
+cursor: pointer;
+background-color: rgba(0,0,0,0.2);
+}
+@media(max-width: 576px){
+.contacts_card{
+margin-bottom: 15px !important;
+}
 }

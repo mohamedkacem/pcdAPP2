@@ -15,7 +15,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { UserInComponent } from './user-in/user-in.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule,MatGridListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule,MatGridListModule,MatTableModule,MatTabsModule } from '@angular/material';
 import { TraducteurComponent } from './traducteur/traducteur.component';
 import { FormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -61,7 +61,9 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MatListModule ,
     FormsModule,
     MDBBootstrapModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTableModule,
+    MatTabsModule
     
     ],
     
