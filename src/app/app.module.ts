@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import {DataService} from './data/data.service';
-
-
+import { AuthService } from 'src/app/auth.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,6 +22,7 @@ import { ChatComponent } from './chat/chat.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MotDialogComponent } from './mot-dialog/mot-dialog.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -63,12 +63,13 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MDBBootstrapModule,
     MatGridListModule,
     MatTableModule,
-    MatTabsModule
+    MatTabsModule,
+    HttpClientModule
     
     ],
     
 
-    providers: [DataService],
+    providers: [DataService,AuthService],
     entryComponents: [
       MotDialogComponent
     ],
