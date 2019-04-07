@@ -1,7 +1,13 @@
 
 import {Injectable} from '@angular/core';
 import {dictionnaire} from '../dictionnaire';
-import {Observable, of} from 'rxjs';
+import {Observable, of, from} from 'rxjs';
+import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { baseURL } from '../shared/BaseURL';
+import { Word } from '../shared/Word';
+
+
 
 @Injectable()
 export class DataService {
@@ -18,26 +24,28 @@ export class DataService {
     {value: 'IOS-Development', viewValue: 'IOS Development'}
   ];
 
-  constructor() {
-  }
+  constructor(private http: HttpClient,private router: Router) {}
 
+  AddWord(french: string, tunisian: string): Observable<Word> {
+   
+    const headers = new HttpHeaders({
+      'ContentType' : 'application/json'
+    });
+
+  return  this.http.post<Word>(baseURL + 'dict/Add', 
+           {frenchWord:french ,tunisianWord: tunisian}, {headers: headers});
+   
+      
+  }
   getData(): Observable<dictionnaire[]> {
     return of<dictionnaire[]>(this.ELEMENT_DATA);
   }
-
-  getCategories() {
-    return this.categories;
-  }
-
-  adddictionnaire(data) {
-    this.ELEMENT_DATA.push(data);
-  }
-
-  deletedictionnaire(index) {
-    this.ELEMENT_DATA = [...this.ELEMENT_DATA.slice(0, index), ...this.ELEMENT_DATA.slice(index + 1)];
-  }
-
-  dataLength() {
-    return this.ELEMENT_DATA.length;
-  }
 }
+
+
+  
+
+  
+
+  
+

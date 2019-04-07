@@ -11,7 +11,7 @@
           
            <div class="col">
           
-             <input mdbInput type="text" class="form-control" placeholder="Francais">
+             <input mdbInput type="text" class="form-control" placeholder="Francais" [(ngModel)]="motfran">
            </div>
           
            <div class="col">
@@ -24,7 +24,7 @@
        </form>
       </mat-card-content>
      <mat-card-actions>
-        <button mat-raised-button  color="primary">Traduire</button>
+        <button mat-raised-button  color="primary" (click)="trad()">Traduire</button>
      </mat-card-actions>
   </mat-card>
   <br>

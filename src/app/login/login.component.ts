@@ -22,7 +22,9 @@ name : string ;
 
   auth() {
 
-     this.authService.login(this.name,this.password).subscribe(data => {console.log(data) ,this.router.navigate(['home']);} ,
+     this.authService.login(this.name,this.password).subscribe(data => {
+       console.log(data) ,this.router.navigate(['home']);
+      },
     error => console.log(error));
 
   }

@@ -34,7 +34,7 @@ export class DashboardComponent {
 
   deletemot(id) {
     // if (/*this.auth.isAuthenticated()*/true) {
-       this.dataService.deletedictionnaire(id);
+       //this.dataService.deletedictionnaire(id);
        this.dataSource = new dictionnaireDataSource(this.dataService);
     /* } else {
        //alert('Login in Before');
@@ -46,7 +46,7 @@ export class DashboardComponent {
       data: 'Ajouter mot'
     });
     dialogRef.componentInstance.event.subscribe((result) => {
-      this.dataService.adddictionnaire(result.data);
+      //this.dataService.adddictionnaire(result.data);
       this.dataSource = new dictionnaireDataSource(this.dataService);
     });
   }
@@ -59,8 +59,8 @@ export class dictionnaireDataSource extends DataSource<any> {
   }
 //dataSource = new dictionnaireDataSource(this.dataService);
   connect(): Observable<dictionnaire[]> {
-    return this.dataService.getData();
-  }
+   return this.dataService.getData();
+}
 
   disconnect() {
   }
