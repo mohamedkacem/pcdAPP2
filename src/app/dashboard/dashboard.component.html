@@ -24,22 +24,22 @@
               <div class="example-container mat-elevation-z8">
                 <!-- fi west el mat-table liste des mots -->
                   <mat-table #table [dataSource]="dataSource">
-                  <ng-container matColumnDef="mot_fr">
+                  <ng-container matColumnDef="frenchWord">
                     <mat-header-cell *matHeaderCellDef> Mot en francais </mat-header-cell>
                     <!-- le parcours-->
-                    <mat-cell *matCellDef="let element" > {{element.mot_fr}} </mat-cell>
+                    <mat-cell *matCellDef="let element" > {{element.frenchWord}} </mat-cell>
                   </ng-container>
-                    <ng-container matColumnDef="mot_tn">
+                    <ng-container matColumnDef="tunisianWord">
                       <mat-header-cell *matHeaderCellDef> Mot en tunisien </mat-header-cell>
                       
-                      <mat-cell *matCellDef="let element"> {{element.mot_tn}} </mat-cell>
+                      <mat-cell *matCellDef="let element"> {{element.tunisianWord}} </mat-cell>
                     </ng-container>
                     
                     <ng-container matColumnDef="delete">
                       <mat-header-cell *matHeaderCellDef></mat-header-cell>
                      
                       <mat-cell *matCellDef="let element">
-                        <a (click)="deletemot(element.position)"
+                        <a (click)="deletemot(element)"
                             type="button">
                           <mat-icon class="icon">delete</mat-icon>
                         </a>

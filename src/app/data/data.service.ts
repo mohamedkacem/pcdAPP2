@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { baseURL } from '../shared/BaseURL';
 import { Word } from '../shared/Word';
+import { Identifiers } from '@angular/compiler';
 
 
 
@@ -38,7 +39,13 @@ export class DataService {
       
   }
   getData(): Observable<dictionnaire[]> {
-    return of<dictionnaire[]>(this.ELEMENT_DATA);
+    // return of<dictionnaire[]>(this.ELEMENT_DATA);
+
+    return this.http.get<dictionnaire[]>(baseURL + 'dict/All');
+  }
+
+  deleteData(id: string){
+    return this.http.delete(baseURL + 'dict/' + id);
   }
 }
 

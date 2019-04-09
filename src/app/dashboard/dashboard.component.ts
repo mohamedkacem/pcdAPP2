@@ -20,6 +20,7 @@ import {DataSource} from '@angular/cdk/table';
 import {Observable} from 'rxjs/Observable';
 import {MotDialogComponent} from '../mot-dialog/mot-dialog.component';
 import {MatDialog} from '@angular/material';
+import { Word } from '../shared/Word';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -29,16 +30,16 @@ export class DashboardComponent {
   constructor(private dataService: DataService,public dialog: MatDialog) {
   }
 
-  displayedColumns = ['mot_fr', 'mot_tn', 'delete'];
+  displayedColumns = ['frenchWord', 'tunisianWord', 'delete'];
   dataSource = new dictionnaireDataSource(this.dataService);
 
-  deletemot(id) {
-    // if (/*this.auth.isAuthenticated()*/true) {
-       //this.dataService.deletedictionnaire(id);
-       this.dataSource = new dictionnaireDataSource(this.dataService);
-    /* } else {
-       //alert('Login in Before');
-     }*/
+  deletemot(word: Word) {
+    
+    
+      this.dataService.deleteData(word._id).subscribe(data=>{
+        console.log(data);
+        
+      });
    }
   openDialog(): void {
     let dialogRef = this.dialog.open(MotDialogComponent, {

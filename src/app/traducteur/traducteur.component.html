@@ -11,12 +11,12 @@
           
            <div class="col">
           
-             <input mdbInput type="text" class="form-control" placeholder="Francais" [(ngModel)]="motfran">
+             <input mdbInput type="text" class="form-control" placeholder="Francais" [(ngModel)]="motfran" name="french" >
            </div>
           
            <div class="col">
             
-             <input mdbInput type="text" class="form-control" placeholder="Tunisien">
+             <textarea  name="tun"  name="tunisianWord" [(ngModel)]="tunisianWord" ></textarea>
            </div>
            
          </div>
@@ -24,26 +24,8 @@
        </form>
       </mat-card-content>
      <mat-card-actions>
-        <button mat-raised-button  color="primary" (click)="trad()">Traduire</button>
+        <button mat-raised-button  color="primary" (click)="getWord()">Traduire</button>
      </mat-card-actions>
   </mat-card>
-  <br>
-  <mat-card>
-  <mat-tab-group mat-align-tabs="start">
-   <mat-tab label="First">Content 1</mat-tab>
-   <mat-tab label="Second">Content 2</mat-tab>
-   <mat-tab label="Third">Content 3</mat-tab>
- </mat-tab-group>
+
  
- <mat-tab-group mat-align-tabs="center">
-   <mat-tab label="First">Content 1</mat-tab>
-   <mat-tab label="Second">Content 2</mat-tab>
-   <mat-tab label="Third">Content 3</mat-tab>
- </mat-tab-group>
- 
- <mat-tab-group mat-align-tabs="end">
-   <mat-tab label="First">Content 1</mat-tab>
-   <mat-tab label="Second">Content 2</mat-tab>
-   <mat-tab label="Third">Content 3</mat-tab>
- </mat-tab-group>
-</mat-card>

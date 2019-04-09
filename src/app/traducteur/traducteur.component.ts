@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { StringifyOptions } from 'querystring';
 import { equal } from 'assert';
+import { Word } from '../shared/Word'
+import { TraducteurService } from '../traducteur.service'
+import { element } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-traducteur',
@@ -10,24 +13,22 @@ import { equal } from 'assert';
 export class TraducteurComponent implements OnInit {
 
   motfran : string;
-  mottun : string;
+  mottun : String;
+  //word : Word[];
+  tunisianWord: String  ;
 
-  constructor() { }
+ 
 
-  ngOnInit() {
-  }
-
-    dict= [
-    { id: 1, motfr: 'bonjour', mottn: 'aslema'},
-    { id: 1, motfr: 'cava', mottn: 'labes'},
-    { id: 1, motfr: 'hotel', mottn: 'outiil'},
-    { id: 1, motfr: 'restaurant', mottn: 'mateem'},
-    { id: 1, motfr: 'maison', mottn: 'dar'},
-    { id: 1, motfr: 'bonjour', mottn: 'aslema'}
-  ]
-
+  constructor(private traducteurService : TraducteurService) {
+   }
   
+  ngOnInit() {}
 
-
-  
+  getWord(): void {
+    this.traducteurService.getWord(this.motfran).subscribe(data=>{
+      this.tunisianWord=data.tunisianWord;
+      console.log(data);
+      
+    });
   }
+}
