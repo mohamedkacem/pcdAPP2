@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-import {DataService} from './data/data.service';
+import { DataService } from './data/data.service';
 import { AuthService } from 'src/app/auth.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +23,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MotDialogComponent } from './mot-dialog/mot-dialog.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ChatService } from './chat.service';
 
 
 
@@ -69,7 +70,7 @@ import { HttpClientModule } from '@angular/common/http';
     ],
     
 
-    providers: [DataService,AuthService],
+    providers: [DataService,AuthService,ChatService],
     entryComponents: [
       MotDialogComponent
     ],
