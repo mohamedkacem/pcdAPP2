@@ -13,17 +13,16 @@ import { Identifiers } from '@angular/compiler';
 @Injectable()
 export class DataService {
 
-  ELEMENT_DATA: dictionnaire[] = [
-    {position :0,mot_fr: 'manger', mot_tn: 'yekel'},
-    {position :1,mot_fr: 'eaux', mot_tn: 'mé'},
-    {position :2,mot_fr: 'table', mot_tn: 'tawla'},
-    
-  ];
-  categories = [
-    {value: 'Web-Development', viewValue: 'Web Development'},
-    {value: 'Android-Development', viewValue: 'Android Development'},
-    {value: 'IOS-Development', viewValue: 'IOS Development'}
-  ];
+  // ELEMENT_DATA: dictionnaire[] = [
+  //   {position :0,mot_fr: 'manger', mot_tn: 'yekel'},
+  //   {position :1,mot_fr: 'eaux', mot_tn: 'mé'},
+  //   {position :2,mot_fr: 'table', mot_tn: 'tawla'},
+  // ];
+  // categories = [
+  //   {value: 'Web-Development', viewValue: 'Web Development'},
+  //   {value: 'Android-Development', viewValue: 'Android Development'},
+  //   {value: 'IOS-Development', viewValue: 'IOS Development'}
+  // ];
 
   constructor(private http: HttpClient,private router: Router) {}
 
@@ -38,10 +37,10 @@ export class DataService {
    
       
   }
-  getData(): Observable<dictionnaire[]> {
+  getData(): Observable<any> {
     // return of<dictionnaire[]>(this.ELEMENT_DATA);
 
-    return this.http.get<dictionnaire[]>(baseURL + 'dict/All');
+    return this.http.get<any>(baseURL + 'dict/All');
   }
 
   deleteData(id: string){

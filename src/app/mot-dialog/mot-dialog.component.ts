@@ -1,6 +1,6 @@
-import { Component, OnInit , EventEmitter, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import {DataService} from '../data/data.service';
+import { Component, OnInit, EventEmitter, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { DataService } from '../data/data.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 })
 export class MotDialogComponent implements OnInit {
 
-  
-    mot_fr: string;
-    mot_tn: string;
-    
+
+  mot_fr: string;
+  mot_tn: string;
+
 
 
   public event: EventEmitter<any> = new EventEmitter();
@@ -22,7 +22,7 @@ export class MotDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<MotDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dataService: DataService,
-    private router : Router) {
+    private router: Router) {
   }
 
   onNoClick(): void {
@@ -30,13 +30,14 @@ export class MotDialogComponent implements OnInit {
   }
 
   addWord(): void {
-    this.dataService.AddWord(this.mot_fr,this.mot_tn).subscribe(data => {
-    console.log(data) ,this.router.navigate(['dashboard']);
-   },
- error => console.log(error));
-    }
+    this.dataService.AddWord(this.mot_fr, this.mot_tn).subscribe(data => {
+      // console.log(data);
+      this.dialogRef.close(data);
+    },
+      error => console.log(error));
+  }
 
-  
+
   ngOnInit() {
   }
 

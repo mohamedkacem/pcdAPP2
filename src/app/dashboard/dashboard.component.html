@@ -1,54 +1,52 @@
-
 <!-- ***********************************-->
 
 <div>
   <br>
+  <div class="container">
     <div class="container">
-        <div class="container">
-          <div Layout="column" LayoutGap="20px" Layout.gt-md="row"  LayoutAlign="space-around center" class="content">
-              <div class="blocks">
-                  <button button="submit" mat-raised-button color="primary" (click)="openDialog()">
-                      <mat-icon>add</mat-icon> Ajouter des mots
-                  </button>
-              </div>
+      <div Layout="column" LayoutGap="20px" Layout.gt-md="row" LayoutAlign="space-around center" class="content">
+        <div class="blocks">
+          <button button="submit" mat-raised-button color="primary" (click)="openDialog()">
+            <mat-icon>add</mat-icon> Ajouter des mots
+          </button>
         </div>
+      </div>
     </div>
     <br>
     <div class="container">
       <div Layout="row" LayoutAlign="center center" class="content">
-        <mat-card class="card" >
+        <mat-card class="card">
           <mat-card-title Layout.gt-xs="row" Layout.xs="column">
             <h3>Dictionnaire</h3>
           </mat-card-title>
           <mat-card-content>
-              <div class="example-container mat-elevation-z8">
-                <!-- fi west el mat-table liste des mots -->
-                  <mat-table #table [dataSource]="dataSource">
-                  <ng-container matColumnDef="frenchWord">
-                    <mat-header-cell *matHeaderCellDef> Mot en francais </mat-header-cell>
-                    <!-- le parcours-->
-                    <mat-cell *matCellDef="let element" > {{element.frenchWord}} </mat-cell>
-                  </ng-container>
-                    <ng-container matColumnDef="tunisianWord">
-                      <mat-header-cell *matHeaderCellDef> Mot en tunisien </mat-header-cell>
-                      
-                      <mat-cell *matCellDef="let element"> {{element.tunisianWord}} </mat-cell>
-                    </ng-container>
-                    
-                    <ng-container matColumnDef="delete">
-                      <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                     
-                      <mat-cell *matCellDef="let element">
-                        <a (click)="deletemot(element)"
-                            type="button">
-                          <mat-icon class="icon">delete</mat-icon>
-                        </a>
-                      </mat-cell>
-                    </ng-container>
-                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-                  </mat-table>
-                </div>
+            <div class="example-container mat-elevation-z8">
+              <!-- fi west el mat-table liste des mots -->
+              <mat-table #table [dataSource]="dataSource">
+                <ng-container matColumnDef="frenchWord">
+                  <mat-header-cell *matHeaderCellDef> Mot en francais </mat-header-cell>
+                  <!-- le parcours-->
+                  <mat-cell *matCellDef="let element"> {{element.frenchWord}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="tunisianWord">
+                  <mat-header-cell *matHeaderCellDef> Mot en tunisien </mat-header-cell>
+
+                  <mat-cell *matCellDef="let element"> {{element.tunisianWord}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="delete">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+
+                  <mat-cell *matCellDef="let element, let i = index">
+                    <a (click)="deletemot(element, i, table.dataSource)" type="button">
+                      <mat-icon class="icon">delete</mat-icon>
+                    </a>
+                  </mat-cell>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+              </mat-table>
+            </div>
           </mat-card-content>
         </mat-card>
       </div>
