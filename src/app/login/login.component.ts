@@ -23,7 +23,13 @@ name : string ;
   auth() {
 
      this.authService.login(this.name,this.password).subscribe(data => {
-       console.log(data) ,this.router.navigate(['home']);
+       console.log("userrrrrrrrrrrrr" + data.admin);
+       alert(data.admin);
+      if(data.admin == true) {
+        this.router.navigate(['dashboard']);
+      }
+      else 
+      this.router.navigate(['home']);
       },
     error => console.log(error));
 

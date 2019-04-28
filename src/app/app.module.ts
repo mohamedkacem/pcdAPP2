@@ -24,7 +24,7 @@ import { MotDialogComponent } from './mot-dialog/mot-dialog.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChatService } from './chat.service';
-
+import { ScrollingModule } from '@angular/cdk/scrolling'
 
 
 
@@ -65,7 +65,8 @@ import { ChatService } from './chat.service';
     MatGridListModule,
     MatTableModule,
     MatTabsModule,
-    HttpClientModule
+    HttpClientModule,
+    ScrollingModule
     
     ],
     

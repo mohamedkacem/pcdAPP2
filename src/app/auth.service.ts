@@ -15,18 +15,26 @@ export class AuthService {
  
   constructor(private http: HttpClient,private router: Router) { }
   
-  login(username: string, password: string): Observable<User> {
+  login(username: string, password: string): Observable<any> {
    
      const headers = new HttpHeaders({
        'ContentType' : 'application/json'
      });
 
-   return  this.http.post<User>(baseURL + 'users/login', 
+   return  this.http.post<any>(baseURL + 'users/login', 
             {username: username,password: password}, {headers: headers});
-    
+    };
       
-      };
-      
+
+ signup(user: any): Observable<User> {
+   
+      const headers = new HttpHeaders({
+        'ContentType' : 'application/json'
+      });
+ 
+    return  this.http.post<User>(baseURL + 'users/signup', 
+            user, {headers: headers});
+     };
        
     }
   
